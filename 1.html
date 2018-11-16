@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var isAdam = true;
+
+    var Apple = function (weight) {
+        this.weight = weight;
+        this.info = function () {
+            return this.weight;
+        }
+        this.decrease = function () {
+            if (this.weight > 0) {
+                this.weight--;
+                if (this.weight === 0) {
+                    console.log('mua them di');
+                    document.write("Mua them tao de noi chuyen" +  "<br>");
+                }
+            }
+        }
+
+        this.getWeight = function () {
+            this.weight += 5
+            }
+        }
+
+    var human = function (name,gender,weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        // this.apple = new Apple(10);
+        this.checkApple = function () {
+            return this.apple.weight;
+        };
+
+        this.say = function () {
+            console.log(apple.weight);
+            console.log('adam' + isAdam);
+            if (apple.weight > 0 ) {
+                if (this.gender === "male") {
+                    document.write("Em an mot mieng di " + "<br>");
+                    apple.decrease();
+                    isAdam = false;
+                    console.log(apple.weight);
+                }else{
+                    document.write("Anh an mot mieng di " + "<br>");
+                    apple.decrease();
+                    isAdam = true;
+                    console.log(apple.weight);
+                }
+            }else{
+                console.log('tsssss');
+                document.write("Het tao roi mua them tao di gi nua");
+            }
+
+        }
+    };
+
+    var adam = new human("Adam","male",80);
+    var eva = new human("Eva","female",49);
+    var apple = new Apple(11);
+
+    do{
+        (isAdam) ? adam.say() : eva.say();
+    }while (apple.weight>0)
+    
+
+
+
+
+
+</script>
+</body>
+</html>
